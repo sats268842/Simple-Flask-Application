@@ -13,7 +13,7 @@ from resources.item import Item, ItemList
 from resources.store import Store, StoreList
 
 app= Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.enivron.get('DATABASE_URL', 'sqlite:///data.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_NOTIFICATIONS']= False
 app.secret_key = "santhosh"
 api =Api(app)
