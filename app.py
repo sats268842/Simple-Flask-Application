@@ -16,9 +16,6 @@ app.config['SQLALCHEMY_TRACK_NOTIFICATIONS']= False
 app.secret_key = "santhosh"
 api =Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
 
 app.config['JWT_AUTH_URL_RULE'] = '/login'
 app.config['JWT_EXPIRATION_DELTA'] = timedelta(seconds=1800)
