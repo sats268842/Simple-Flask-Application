@@ -2,6 +2,8 @@ from flask import Flask
 from flask_restful import  Api
 from flask_jwt import JWT
 from datetime import timedelta
+import sys
+import logging
 
 from security import authenticate, identity
 from resources.user import UserRegister
@@ -31,6 +33,11 @@ api.add_resource(ItemList, '/items')
 api.add_resource(StoreList, '/stores')
 
 api.add_resource(UserRegister, '/register')
+
+
+
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 # if __name__ == '_main_':
 
